@@ -1,0 +1,12 @@
+RewriteEngine on
+
+RewriteRule ^([a-zA-Z]+)$ index.php?mod=$1
+
+RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
+RewriteRule ^product/([a-z]+)$ index.php?mod=product&view=$1
+
+RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
+RewriteRule ^product/([a-z0-9]+)/([a-z]+)$ index.php?mod=product&view=$1&sort=$2
+
+RewriteCond %{REQUEST_URI} !\.(?:css|js|jpe?g|gif|png)$ [NC]
+RewriteRule ^product/detail/([0-9]+)$ index.php?mod=detail&id=$1

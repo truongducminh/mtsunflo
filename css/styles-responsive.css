@@ -1,0 +1,108 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+@media (min-width: 940px) and (max-width: 1170px) {
+    #nav ul.level0 li { width:210px !important; }
+    #nav ul li ul.level1 li,
+    #nav ul li ul.level2 li{ width:215px; }
+    #nav ul.level0 li.menu-static-blocks{ width:420px !important; }
+    #nav ul.level0 li.menu-static-blocks img{ width:408px !important; }
+    #nav ul.level0 li.menu-category-description{ width:420px !important; }
+    #nav ul.level0 li.menu-category-description img{ width:408px !important; }   
+    .custom-menu{ width:224px !important; }
+    .fashion-news{ border:0; }
+    .fashion-collection{ display:none; }
+   
+	
+	
+}
+@media(max-width:767px) {body {padding:0 !important;} }
+@media (max-width: 480px) {
+   .products-grid .top-actions .mt-price,
+   .products-grid .top-actions .mt-button{width:100px;float: left;}
+  
+}
+@media only screen and (min-width: 460px) and (max-width: 560px){
+    .logo img{width:250px;}
+	
+	.product-tabs li.active, .product-tabs li:hover {border:1px solid #e8e8e8 !important;}
+	.product-tabs li { float: none !important;margin: 1px 0 10px !important;text-align: center;}
+	body {padding:0 !important;} 
+    }
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .logo img{width:200px;}
+	.header a.logo{margin:35px 40px !important;}
+	.footer .left-footer{float:none !important;}
+	.footer ul.links{margin:0 auto !important;float:none !important;text-align: center !important;}
+	.footer-static-container .block-subscribe{margin:0 !important;;}
+	.footer .right-footer{margin:0;}
+	.header .top-cart{ margin:30px 10px 20px 0 !important; }
+    .col2-set .col-1 { float:none; width:auto; }
+    .col2-set .col-2 { float:none; width:auto; }
+    .data-table{ width:220px !important;margin:10px; }
+    .data-table thead th { float:left; height:20px; text-align:left; border-bottom:1px solid #fff;  }
+    .data-table tbody td { width:215px; float:left; text-align:left; }
+    .data-table tr.last th, .data-table tr.last td{ border-bottom:1px solid #ddd !important; width:230px; padding:3px 10px; }
+    .cart-table .btn-continue{ margin:0 50px 10px 0; }
+    .cart-table .btn-update, .cart-table .btn-empty{ float:left !important; }
+    .cart-table .btn-update{ margin:0 50px 10px 0 !important; }
+    .mt-top-menu .welcome-msg{ margin:0 0 0 20px !important; }
+	.opc .buttons-set{width:220px;}
+	.mt-category-products {padding:0 30px;}
+	.mt-category-products .item {margin:0;}
+	
+	.mt-products-grid .top-actions{height:auto;}
+	.mt-products-grid .top-actions .mt-price,
+	.mt-products-grid .top-actions .mt-button{width:104px;float: left;}
+	.products-grid .top-actions .mt-price,
+	.products-grid .top-actions .mt-button{width:124px;float: left;}
+	.mt-products-grid .top-actions .mt-button {margin-left:10px;}
+	.mt-products-grid .mt-actions li{margin:0 10px;background:none !important;}
+	
+	.header-container-top .right-header-top,
+	.header-container-top .language{float:left;width:100%;}
+	.header-container-top .top-cart {background:none;}
+    .product-tabs li.active, .product-tabs li:hover {border:1px solid #e8e8e8 !important;}
+	.product-tabs li { float: none !important;margin: 1px 0 10px !important;text-align: center;}
+	.product-collateral .box-tags .form-add input.input-text ,.form-list textarea{width:165px !important;}
+	.product-tabs-content .box-reviews .form-add  {width:200px !important;}
+	body {padding:0 !important;} 
+	 .header-container-top .toplinks , .cart a {float:left !important;}
+     .quick-access {margin:0 20px !important;}
+	 .header-container-top .top-cart {background:none !important;}
+	 #mtcontainer  .top-actions .mt-button {float:none !important; width:50%;}
+     #mtcontainer  #products-name span,.products-grid #products-name span{font-size:90% !important;}
+	}
+
+@media only screen and (min-width: 240px) and (max-width: 320px)	{
+    .opc li.section,.data-table .odd{width:230px;}
+	.logo img{width:150px;}
+	.header a.logo{margin:40px ;}
+	.header-container-top .right-header-top,
+	.header-container-top .language{float:left;width:100%;}
+	.footer-static {padding:20px;}
+    body {padding:0 !important;} 
+	
+   }
