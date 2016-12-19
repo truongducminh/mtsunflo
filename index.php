@@ -78,7 +78,7 @@
 <div class="wrapper">
   <div class="page">
     <!-- Header -->
-    <?php include ROOT.'/include/header.php';?>
+    
 
     <!-- Menu -->
     <?php include ROOT.'/include/menu.php'; ?>

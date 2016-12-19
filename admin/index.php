@@ -71,6 +71,18 @@ include ROOT."/class/message.class.php";
                 include ROOT.'/admin/module/category/index.php';
                 break;
 
+              case 'addCategory':
+                include ROOT.'/admin/module/category/add-category.php';
+                break;
+
+              case 'updateCategory':
+                include ROOT.'/admin/module/category/update-category.php';
+                break;
+
+              case 'removeCategory':
+                include ROOT.'/admin/module/category/remove-category.php';
+                break;
+
               case 'order':
                 include ROOT.'/admin/module/order/index.php';
                 break;

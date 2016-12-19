@@ -15,7 +15,7 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          <form role="form" action="#" method="post">
+          <form role="form" action="<?=SERVER_NAME?>/admin/addCategory" method="post">
             <div class="col-md-6">
               <div class="form-group">
                   <label>Tên sản phẩm</label>
@@ -69,6 +69,7 @@
                 </div>
             </div>
         </div>
+        <a class="btn btn-primary" href="#">Next 100</a>
         <!--End Advanced Tables -->
     </div>
 </div>

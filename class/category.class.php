@@ -5,6 +5,21 @@
 class Category extends Database
 {
 
+  public function insertCategory($name, $desc)
+  {
+    $sql = 'INSERT INTO loai(ten,moTa) VALUES(?,?)';
+    $array = array($name, $desc);
+    $this->query($sql,$array);
+    return $this->row;
+  }
+
+  public function getCategoriesCount()
+  {
+    $sql = 'SELECT COUNT(id) FROM loai';
+    $row = $this->query($sql)[0];
+    print_r($row);
+  }
+
   public function getAllCategories()
   {
     $categories = array();

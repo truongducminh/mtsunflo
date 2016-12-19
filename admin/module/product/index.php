@@ -37,7 +37,7 @@
                             $products = $db->get100Products();
                             foreach ($products as $p) {
                               echo '<tr><td>'.$p['id'].'
-                                <br><br><a class="btn btn-primary" href='.SERVER_NAME.'/admin/editProduct/'.$p['id'].'><i class="fa fa-edit "></i> Sửa</a>
+                                <br><br><a class="btn btn-warning" href='.SERVER_NAME.'/admin/editProduct/'.$p['id'].'><i class="fa fa-edit "></i> Sửa</a>
                                 <br><br><a class="btn btn-danger" href='.SERVER_NAME.'/admin/removeProduct/'.$p['id'].'><i class="fa fa-pencil"></i> Xóa</a></td>';
                               echo '<td>'.$p['name'].'</td>';
                               echo '<td>'.$p['cateId'].'</td>';
