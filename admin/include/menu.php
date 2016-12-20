@@ -10,37 +10,24 @@
 </li>
 
 <li>
-  <a href="#"><i class="fa fa-sitemap fa-3x"></i>Managing<span class="fa arrow"></span></a>
+  <a href="#"><i class="fa fa-sitemap fa-3x"></i> Quản lý<span class="fa arrow"></span></a>
   <ul class="nav nav-second-level">
       <li>
-          <a href=<?= SERVER_NAME.'/admin/product' ?>>Product</a>
+          <a href=<?= SERVER_NAME.'/admin/product' ?>>Sản phẩm</a>
       </li>
       <li>
-          <a href=<?= SERVER_NAME.'/admin/category' ?>>Category</a>
+          <a href=<?= SERVER_NAME.'/admin/category' ?>>Phân loại</a>
       </li>
       <li>
-          <a href=<?= SERVER_NAME.'/admin/order' ?>>Order</a>
+          <a href=<?= SERVER_NAME.'/admin/order' ?>>Đơn hàng</a>
       </li>
       <li>
-          <a href=<?= SERVER_NAME.'/admin/user' ?>>User</a>
-      </li>
-      <li>
-          <a href="#">Second Level Link<span class="fa arrow"></span></a>
-          <ul class="nav nav-third-level">
-              <li>
-                  <a href="#">Third Level Link</a>
-              </li>
-              <li>
-                  <a href="#">Third Level Link</a>
-              </li>
-              <li>
-                  <a href="#">Third Level Link</a>
-              </li>
-
-          </ul>
-
+          <a href=<?= SERVER_NAME.'/admin/user' ?>>Khách hàng</a>
       </li>
   </ul>
+</li>
+<li>
+   <a  href="ui.html"><i class="fa fa-envelope-o fa-3x"></i> Hộp thư</a>
 </li>
 
      <li>

@@ -5,7 +5,7 @@ $msgClass = 'danger';
 $msgSubject = 'Lỗi';
 $msg = '';
 $actionClass = 'danger';
-$action = '/category';
+$action = SERVER_NAME.'/admin/category';
 $actionName = 'Trở về';
 if ($name == '') {
   $msg = 'Tên loại sản phẩm không được rỗng';

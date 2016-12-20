@@ -48,7 +48,7 @@ if ($view != '') {
 $arrayCart = isset($_SESSION['cart'])?$_SESSION['cart']:array();
 foreach ($rows as $r) {
 	$arrayKeys = array_keys($arrayCart, $r['sanPhamId']);
-	$cartAction = (count($arrayKeys)>0)?'Đã thêm':'Add to cart';
+	$cartAction = (count($arrayKeys)>0)?'Đã thêm':'Thêm vào giỏ hàng';
 ?>
 
 <div class="item element filter-cat-3" data-category="filter-cat-3" style="width: 266px;">
@@ -72,7 +72,7 @@ foreach ($rows as $r) {
         <div class="price-box"> <span class="regular-price" id="product-price-30"> <span class="price"><?php echo number_format($r['gia']) ?> VND</span> </span> </div>
       </div>
       <div class="mt-button">
-        <button type="button" title="Add to Cart" class="button btn-cart <?php echo $r['sanPhamId'] ?>" onclick="addToCart(<?php echo $r['sanPhamId'] ?>)"><span><span><?php echo $cartAction ?></span></span></button>
+        <button type="button" title="Add to Cart" class="button btn-cart <?=$r['sanPhamId'] ?>" onclick="addToCart(<?=$r['sanPhamId'] ?>)"><span><span><?=$cartAction ?></span></span></button>
       </div>
     </div>
   </div>

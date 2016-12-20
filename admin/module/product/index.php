@@ -41,7 +41,7 @@
                                 <br><br><a class="btn btn-danger" href='.SERVER_NAME.'/admin/removeProduct/'.$p['id'].'><i class="fa fa-pencil"></i> Xóa</a></td>';
                               echo '<td>'.$p['name'].'</td>';
                               echo '<td>'.$p['cateId'].'</td>';
-                              echo '<td>'.$p['desc'].'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</td>';
+                              echo '<td>'.$p['desc'].'</td>';
                               echo '<td>'.number_format($p['price']).'</td>';
                               echo '<td>'.$p['date'].'</td>';
                               echo '<td>'.$p['buy'].'</td>';

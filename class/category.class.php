@@ -13,6 +13,29 @@ class Category extends Database
     return $this->row;
   }
 
+  public function updateCategory($id, $name, $desc)
+  {
+    $sql = 'UPDATE loai SET ten=?,moTa=? WHERE id=?';
+    $array = array($name, $desc, $id);
+    $this->query($sql,$array);
+    return $this->row;
+  }
+
+  public function deleteCategory($id)
+  {
+    $sql = 'DELETE FROM loai WHERE id=?';
+    $array = array($id);
+    $this->query($sql,$array);
+    return $this->row;
+  }
+
+  public function getCategoriesById($id)
+  {
+    $sql = 'SELECT * FROM loai WHERE id = ?';
+    $array = array($id);
+    return $this->query($sql,$array)[0];
+  }
+
   public function getCategoriesCount()
   {
     $sql = 'SELECT COUNT(id) FROM loai';

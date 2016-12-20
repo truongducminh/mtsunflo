@@ -19,6 +19,7 @@ class Image extends database
     $sql = 'INSERT INTO hinh(sanPhamId,url) VALUES (?,?)';
     $array = array($productId,$url);
     $this->query($sql,$array);
+    return $this->row;
   }
 
   public function updateImage($productId, $url, $image)
@@ -27,6 +28,16 @@ class Image extends database
     $url = $this->moveUploadedFile($image);
     $sql = 'UPDATE hinh SET url=? WHERE sanPhamId=?';
     $array = array($url,$productId);
+    $this->query($sql,$array);
+    return $this->row;
+  }
+
+  public function deleteImage($productId)
+  {
+    $image = $this->getImageByProductId($productId);
+    $this->removeImageFile($image['url']);
+    $sql = 'DELETE FROM hinh WHERE sanPhamId=?';
+    $array = array($productId);
     $this->query($sql,$array);
     return $this->row;
   }

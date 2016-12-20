@@ -75,8 +75,8 @@ include ROOT."/class/message.class.php";
                 include ROOT.'/admin/module/category/add-category.php';
                 break;
 
-              case 'updateCategory':
-                include ROOT.'/admin/module/category/update-category.php';
+              case 'editCategory':
+                include ROOT.'/admin/module/category/edit-category.php';
                 break;
 
               case 'removeCategory':

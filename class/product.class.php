@@ -12,14 +12,16 @@ class Product extends database
 
 	public function updateProduct($id, $name, $categoryId, $desc, $price)
 	{
-		$sql = 'UPDATE sanpham SET ten=?,loaiId=?,gia=?';
-		$array = array($name, $categoryId, $price);
-		if ($desc) {
-			$sql .= ',moTa=?';
-			$array[] = $desc;
-		}
-		$sql .= ' WHERE id=?';
-		$array[] = $id;
+		$sql = 'UPDATE sanpham SET ten=?,loaiId=?,moTa=?,gia=? WHERE id=?';
+		$array = array($name, $categoryId, $desc, $price, $id);
+		$this->query($sql,$array);
+		return $this->row;
+	}
+
+	public function deleteProduct($id)
+	{
+		$sql = 'DELETE FROM sanpham WHERE id=?';
+		$array = array($id);
 		$this->query($sql,$array);
 		return $this->row;
 	}

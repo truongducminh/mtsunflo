@@ -14,7 +14,7 @@
     if ($newImage['type'] && $newImage['type'] != 'image/jpeg' && $newImage['type'] != 'image/png') $msg .= 'Hình ảnh không hợp lệ<br>';
     if (!$name) $msg .= 'Tên sản phẩm trống<br>';
     if (!$price) $msg .= 'Giá sản phẩm trống<br>';
-    if (preg_match('/\D+/',$price) || strlen($price)<4) $msg .= 'Giá sản phẩm không hợp lệ<br>';
+    else if (preg_match('/\D+/',$price) || strlen($price)<4) $msg .= 'Giá sản phẩm không hợp lệ<br>';
     if ($msg!='') {
         $msgClass = 'panel panel-danger';
         $action = SERVER_NAME.'/admin/editProduct/'.$id;
@@ -38,7 +38,7 @@
       }
     }
     include ROOT.'/admin/module/product/message.php';
-    
+
     $msgSubject = 'Hình ảnh';
     if ($newImage['name']){
       $imageDB = new Image();

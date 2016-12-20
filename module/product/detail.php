@@ -3,6 +3,9 @@ $id = getValue('id');
 $rows = $db->getProductById($id);
 $r = $rows[0];
 $categoryId = $r['loaiId'];
+$arrayCart = isset($_SESSION['cart'])?$_SESSION['cart']:array();
+$arrayKeys = array_keys($arrayCart, $r['sanPhamId']);
+$cartAction = (count($arrayKeys)>0)?'Đã thêm':'Thêm vào giỏ hàng';
 ?>
 
 
@@ -29,7 +32,7 @@ $categoryId = $r['loaiId'];
           <div class="add-to-cart">
             <label for="qty">Qty:</label>
             <input name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" type="text">
-            <button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>
+            <button type="button" title="Add to Cart" class="button btn-cart <?=$r['sanPhamId'] ?>" onclick="addToCart(<?=$r['sanPhamId'] ?>)"><span><span><?=$cartAction ?></span></span></button>
             <span class="textrepuired"></span>
           </div>
 		    </div>
