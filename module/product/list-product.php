@@ -1,6 +1,7 @@
 
 
 <?php
+$productDB = new product();
 $sort = getValue('sort', 'asc');
 $page = getValue('page',0);
 if (isset($_POST['q'])) $view = $_POST['q'];
@@ -9,39 +10,39 @@ settype($page, "int");
 if ($view != '') {
 	switch ($view) {
 		case 'new':
-			$rows = $db->getTop4NewProducts();
+			$rows = $productDB->getTop4NewProducts();
 			break;
 
 		case 'top4dangthap':
-			$rows = $db->getTop4SellingProducts(1);
+			$rows = $productDB->getTop4SellingProducts(1);
 			break;
 
 		case 'top4dangthuyen':
-			$rows = $db->getTop4SellingProducts(2);
+			$rows = $productDB->getTop4SellingProducts(2);
 			break;
 
 		case 'top4dangquat':
-			$rows = $db->getTop4SellingProducts(3);
+			$rows = $productDB->getTop4SellingProducts(3);
 			break;
 
 		case 'all':
-			$rows = $db->getProducts($page, $sort);
+			$rows = $productDB->getProducts($page, $sort);
 			break;
 
 		case 'dangthap':
-			$rows = $db->getProductsByType(1,$page, $sort);
+			$rows = $productDB->getProductsByType(1,$page, $sort);
 			break;
 
 		case 'dangthuyen':
-			$rows = $db->getProductsByType(2,$page, $sort);
+			$rows = $productDB->getProductsByType(2,$page, $sort);
 			break;
 
 		case 'dangquat':
-			$rows = $db->getProductsByType(3,$page, $sort);
+			$rows = $productDB->getProductsByType(3,$page, $sort);
 			break;
 
 		default:
-			$rows = $db->searchProducts($view,$page,$sort);
+			$rows = $productDB->searchProducts($view,$page,$sort);
 			break;
 	}
 }
@@ -60,7 +61,7 @@ foreach ($rows as $r) {
 		<a href="<?php echo SERVER_NAME ?>/watercolor-beauty.html" title="Watercolor Beauty">
     <div id="30">
       <a href=<?php echo SERVER_NAME."/product/detail/".$r['sanPhamId'] ?>>
-        <img src=<?php echo $r['url']; ?> alt="Watercolor Beauty" style="max-height:300px;" />
+        <img src=<?=SERVER_NAME.'/images/product/'.$r['tenHinh']; ?> alt="Watercolor Beauty" style="max-height:300px;" />
       </a>
      </div>
     </a>

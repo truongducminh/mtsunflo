@@ -1,4 +1,5 @@
 <?php
+$db = new product();
 $id = getValue('id');
 $rows = $db->getProductById($id);
 $r = $rows[0];
@@ -18,7 +19,7 @@ $cartAction = (count($arrayKeys)>0)?'Đã thêm':'Thêm vào giỏ hàng';
       </div>
       <div class="product-img-box span6">
         <div id="wrap" style="top:0px;z-index:99;position:relative;">
-			<img class="imgbox" src=<?php echo $r['url'] ?> alt="" title="Optional title display" style="display: block;">
+			<img class="imgbox" src=<?=SERVER_NAME.'/images/product/'.$r['tenHinh']; ?> alt="" title="Optional title display" style="display: block;">
         </div>
       </div>
 
@@ -241,11 +242,11 @@ $cartAction = (count($arrayKeys)>0)?'Đã thêm':'Thêm vào giỏ hàng';
         <li style="width: 155px; padding: 16px; overflow: hidden; float: left;">
           <div class="item">
             <div id="products-name">
-              <p class="product-name"><a href="#"><span><span><?php $r['ten'] ?></span></span></a></p>
+              <p class="product-name"><a href="#"><span><span><?=$r['ten'] ?></span></span></a></p>
             </div>
             <div class="item-inner">
               <div class="product"> <a href="#" title="Tháp 3 tầng" class="product-image">
-             	  <img src=<?php echo $r['url'] ?> orchids="" flower="" alt="" style="height:200;"></a>
+             	  <img src=<?=SERVER_NAME.'/images/product/'.$r['tenHinh']; ?> orchids="" flower="" alt="" style="height:200;"></a>
                 <div class="product-details">
                   <input class="checkbox related-checkbox" id="related-checkbox5" name="related_products[]" value="5" type="checkbox">
                 </div>

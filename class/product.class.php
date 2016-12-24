@@ -94,7 +94,7 @@ class Product extends database
 			$product['price'] = $r['gia'];
 			$product['date'] = $r['ngayRaMat'];
 			$product['buy'] = $r['luotMua'] ;
-			$product['image'] = $r['url'];
+			$product['image'] = SERVER_NAME.'/images/product/'.$r['tenHinh'];
 			$products[] = $product;
 		}
 		return $products;

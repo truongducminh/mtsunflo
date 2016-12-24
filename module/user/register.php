@@ -13,7 +13,7 @@ else {
 	<a href=<?php echo '"'.SERVER_NAME.'/forgotPassword"'; ?>>Quên mật khẩu</a>
 	<a href=<?php echo '"'.SERVER_NAME.'/login"'; ?>>Đăng nhập</a>
 </div>
-<form class="log-form" action="<?php echo SERVER_NAME ?>/registerExecute" method="post" onsubmit="return ktra();">
+<form class="log-form" action="<?= SERVER_NAME ?>/registerExecute" method="post" onsubmit="return ktra();">
 	<h4>&diams;Thông tin đăng nhập</h4>
 	<input type="text" name="username" value="" placeholder="Tên tài khoản" maxlength="16" required>
 	<span>Độ dài 8-16 kí tự, chỉ bao gồm các chữ viết thường và số.</span>

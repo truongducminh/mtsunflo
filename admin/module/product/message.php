@@ -2,7 +2,7 @@
   <div class="col-md-12">
     <div class="<?=$msgClass?>">
       <div class="panel-heading">
-        <?=$msgSubject?>
+        &nbsp;
       </div>
       <div class="panel-body">
         <?=$msg?>

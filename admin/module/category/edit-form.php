@@ -6,7 +6,7 @@ $c = $categoryDB->getCategoriesById(getValue('key'));
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-          Thêm sản phẩm
+          Chỉnh sửa loại sản phẩm
       </div>
       <div class="panel-body">
         <div class="row">

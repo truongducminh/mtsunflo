@@ -38,6 +38,10 @@ include ROOT."/class/message.class.php";
 <body>
     <div id="wrapper">
 
+        <?php if (!isset($_SESSION['adminId'])) {
+          include ROOT.'/admin/module/login/index.php';
+        } else { ?>
+
         <?php include ROOT.'/admin/include/header.php';?>
         <!-- /. NAV TOP  -->
 
@@ -49,6 +53,14 @@ include ROOT."/class/message.class.php";
             switch ($mod) {
               case '':
                 include ROOT.'/admin/module/dashboard/index.php';
+                break;
+
+              case 'login':
+                include ROOT.'/admin/module/login/login.php';
+                break;
+
+              case 'logout':
+                include ROOT.'/admin/module/login/logout.php';
                 break;
 
               case 'product':
@@ -87,8 +99,20 @@ include ROOT."/class/message.class.php";
                 include ROOT.'/admin/module/order/index.php';
                 break;
 
+              case 'editOrder':
+                include ROOT.'/admin/module/order/edit-order.php';
+                break;
+
+              case 'removeOrder':
+                include ROOT.'/admin/module/order/remove-order.php';
+                break;
+
               case 'user':
                 include ROOT.'/admin/module/user/index.php';
+                break;
+
+              case 'inbox':
+                include ROOT.'/admin/module/inbox/index.php';
                 break;
 
               default:
@@ -101,6 +125,7 @@ include ROOT."/class/message.class.php";
 
         </div>
      <!-- /. WRAPPER  -->
+    <?php } ?>
 
 
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

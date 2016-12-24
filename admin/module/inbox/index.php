@@ -1,14 +1,11 @@
-
 <div id="page-inner">
 <div class="row">
     <div class="col-md-12">
-      <h2>Quản lý khách hàng</h2>
+      <h2>Hộp thư</h2>
     </div>
 </div>
 <!-- /. ROW  -->
 <hr />
-
-
 <div class="row">
     <div class="col-md-12">
         <!-- Advanced Tables -->
@@ -22,25 +19,24 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Tên khách hàng</th>
-                                <th>Ngày sinh</th>
-                                <th>Địa chỉ</th>
-                                <th>Số điện thoại</th>
+                                <th>Người gửi</th>
                                 <th>Email</th>
+                                <th>Tiêu đề</th>
+                                <th>Nội dung</th>
+                                <th>Thời gian</th>
                             </tr>
                         </thead>
                         <tbody>
                           <?php
-                            $db = new User();
-                            $users = $db->get100Users();
-                            foreach ($users as $u) {
-                              echo '<tr><td>'.$u['id'].'</td>';
-                              echo '<td>'.$u['name'].'</td>';
-                              echo '<td>'.$u['dateOfBirth'].'</td>';
-                              echo '<td>'.$u['address'].'</td>';
-                              echo '<td>'.$u['phoneNumber'].'</td>';
-                              echo '<td>'.$u['email'].'</td>';
-                              echo '<td><a class="btn btn-danger" href="'.SERVER_NAME.'/admin/removeUser/'.$u['id'].'">Xóa</a></td></tr>';
+                            $db = new Message();
+                            $messages = $db->get100Messages();
+                            foreach ($messages as $m) {
+                              echo '<tr><td>'.$m['id'].'</td>';
+                              echo '<td>'.$m['sender'].'</td>';
+                              echo '<td>'.$m['email'].'</td>';
+                              echo '<td>'.$m['subject'].'</td>';
+                              echo '<td>'.$m['content'].'</td>';
+                              echo '<td>'.$m['time'].'</td></tr>';
                             }
                           ?>
                         </tbody>

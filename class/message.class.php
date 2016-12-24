@@ -14,6 +14,22 @@ class Message extends Database
     return 1;
   }
 
+  public function get100Messages($page = 0)
+  {
+    $messages = array();
+    $rows = $this->query("SELECT * FROM hopthu ORDER BY time LIMIT ".($page*100).",100");
+    foreach ($rows as $r ) {
+      $message['id'] = $r['id'];
+      $message['sender'] = $r['nguoiGui'];
+      $message['email'] = $r['email'];
+      $message['subject'] = $r['tieuDe'];
+      $message['content'] = $r['noiDung'];
+      $message['time'] = $r['time'];
+      $messages[] = $message;
+    }
+    return $messages;
+  }
+
 }
 
 ?>

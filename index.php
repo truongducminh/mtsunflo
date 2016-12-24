@@ -8,8 +8,6 @@
   include ROOT."/class/order.class.php";
   include ROOT."/class/order-detail.class.php";
   include ROOT."/class/message.class.php";
-  $db = new product();
-	$dbUser = new User();
 ?>
 
 <html >
@@ -78,7 +76,7 @@
 <div class="wrapper">
   <div class="page">
     <!-- Header -->
-    
+
 
     <!-- Menu -->
     <?php include ROOT.'/include/menu.php'; ?>
@@ -139,6 +137,10 @@
 						case "profile":
               include ROOT.'/module/user/profile.php';
               break;
+
+						case 'editProfile':
+							include ROOT.'/module/user/edit.php';
+							break;
 
 						case "logout":
               include ROOT.'/module/user/logout.php';

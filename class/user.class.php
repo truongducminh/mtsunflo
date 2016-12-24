@@ -9,6 +9,20 @@ class User extends database
     return $id;
   }
 
+  public function updateUser($password, $name, $dateOfBirth, $address, $phone, $email, $userId)
+  {
+    if ($password != '') {
+      $sql = 'UPDATE user SET password=?,name=?,dateOfBirth=?,address=?,phoneNumber=?,email=? WHERE id=?';
+      $array = array($password, $name, $dateOfBirth, $address, $phone, $email,$userId);
+    }
+    else {
+      $sql = 'UPDATE user SET name=?,dateOfBirth=?,address=?,phoneNumber=?,email=? WHERE id=?';
+      $array = array($name, $dateOfBirth, $address, $phone, $email,$userId);
+    }
+    $this->query($sql,$array);
+    return $this->row;
+  }
+
   public function getUserById($id)
   {
     return $this->query("SELECT * FROM user WHERE id=$id");
@@ -34,6 +48,13 @@ class User extends database
 			$users[] = $user;
 		}
 		return $users;
+  }
+
+  public function getAdminUser($username, $password)
+  {
+    $sql = 'SELECT * FROM admin WHERE username=? AND password=?';
+    $arr = array($username, $password);
+    return $this->query($sql,$arr);
   }
 
 }

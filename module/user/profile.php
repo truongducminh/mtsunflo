@@ -6,8 +6,9 @@ if (!isset($_SESSION['userId'])) {
 }
 else {
 	$dbOrder = new Order();
+	$userDB = new User();
   $userId = $_SESSION['userId'];
-  $rows = $dbUser->getUserById($userId);
+  $rows = $userDB->getUserById($userId);
   $r = $rows[0];
   ?>
   <div class="mt-products-list" style="width:40%;padding:20px 2%;margin-right:2%">
@@ -88,13 +89,15 @@ else {
       </tbody>
       <tfoot>
         <tr>
-          <td class="hidden-xs"></td>
           <td>
             <a href="<?php echo SERVER_NAME ?>/logout" style="text-decoration:none">
               <button type="submit" name="button" class="btn btn-success btn-block"><i class="fa fa-angle-left"></i>Đăng xuất
               </button>
             </a>
           </td>
+					<td class="hidden-xs">
+						<a href=<?=SERVER_NAME.'/editProfile'?> class="btn btn-warning btn-block" style="color:#fff;">Chỉnh sửa</a>
+					</td>
         </tr>
       </tfoot>
     </table>

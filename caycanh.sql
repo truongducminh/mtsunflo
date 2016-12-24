@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2016 at 11:24 AM
+-- Generation Time: Dec 24, 2016 at 01:52 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `caycanh`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(32) NOT NULL,
+  `password` text NOT NULL,
+  `name` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`, `name`) VALUES
+(1, 'admin', 'c4ca4238a0b923820dcc509a6f75849b', 'Minh');
 
 -- --------------------------------------------------------
 
@@ -85,29 +105,29 @@ INSERT INTO `donhang` (`id`, `userId`, `ngayDatHang`, `ghiChu`, `tinhTrang`) VAL
 CREATE TABLE `hinh` (
   `id` int(11) NOT NULL,
   `sanPhamId` int(11) NOT NULL,
-  `url` text NOT NULL
+  `tenHinh` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `hinh`
 --
 
-INSERT INTO `hinh` (`id`, `sanPhamId`, `url`) VALUES
-(1, 1, 'http://localhost/mt_sunflo/images/product/thap3tang.jpg'),
-(2, 2, 'http://localhost/mt_sunflo/images/product/thap5tang.jpg'),
-(3, 3, 'http://localhost/mt_sunflo/images/product/thap7tang.jpg'),
-(4, 4, 'http://localhost/mt_sunflo/images/product/thap9tang.jpg'),
-(5, 5, 'http://localhost/mt_sunflo/images/product/thap11tang.jpg'),
-(6, 6, 'http://localhost/mt_sunflo/images/product/thuyen1.jpg'),
-(7, 7, 'http://localhost/mt_sunflo/images/product/thuyen2.jpg'),
-(8, 8, 'http://localhost/mt_sunflo/images/product/thuyen3.jpg'),
-(9, 9, 'http://localhost/mt_sunflo/images/product/thuyen4.jpg'),
-(10, 10, 'http://localhost/mt_sunflo/images/product/thuyen5.jpg'),
-(11, 13, 'http://localhost/mt_sunflo/images/product/quat3.jpg'),
-(12, 14, 'http://localhost/mt_sunflo/images/product/quat4.jpg'),
-(13, 15, 'http://localhost/mt_sunflo/images/product/quat5.jpg'),
-(14, 11, 'http://localhost/mt_sunflo/images/product/quat1.jpg'),
-(15, 12, 'http://localhost/mt_sunflo/images/product/quat2.jpg');
+INSERT INTO `hinh` (`id`, `sanPhamId`, `tenHinh`) VALUES
+(1, 1, 'thap3tang.jpg'),
+(2, 2, 'thap5tang.jpg'),
+(3, 3, 'thap7tang.jpg'),
+(4, 4, 'thap9tang.jpg'),
+(5, 5, 'thap11tang.jpg'),
+(6, 6, 'thuyen1.jpg'),
+(7, 7, 'thuyen2.jpg'),
+(8, 8, 'thuyen3.jpg'),
+(9, 9, 'thuyen4.jpg'),
+(10, 10, 'thuyen5.jpg'),
+(11, 13, 'quat3.jpg'),
+(12, 14, 'quat4.jpg'),
+(13, 15, 'quat5.jpg'),
+(14, 11, 'quat1.jpg'),
+(15, 12, 'quat2.jpg');
 
 -- --------------------------------------------------------
 
@@ -211,12 +231,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `dateOfBirth`, `address`, `phoneNumber`, `email`) VALUES
-(25, 'Minh', 'admin', 'c4ca4238a0b923820dcc509a6f75849b', NULL, NULL, NULL, 'minhtd0107@gmail.com'),
-(26, '', 'thanhtuo0o', '5a8cc5594f16d4dd0dd11233884ae0ae', '0000-00-00', '', '', '');
+(25, 'Minh', 'admin', 'c4ca4238a0b923820dcc509a6f75849b', '1995-07-01', 'TPHCM', '01207688727', 'minhtd0107@gmail.com');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `ctdonhang`
@@ -267,6 +292,11 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `ctdonhang`
 --
 ALTER TABLE `ctdonhang`
@@ -280,7 +310,7 @@ ALTER TABLE `donhang`
 -- AUTO_INCREMENT for table `hinh`
 --
 ALTER TABLE `hinh`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `hopthu`
 --
@@ -295,12 +325,12 @@ ALTER TABLE `loai`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 --
 -- Constraints for dumped tables
 --

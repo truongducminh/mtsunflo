@@ -2,6 +2,18 @@
 class Order extends database
 {
 
+  public function getOrderById($id)
+  {
+    $row = $this->query("SELECT * FROM donhang WHERE id = ?", array($id))[0];
+    $donHang = array();
+    $donHang['id'] = $row['id'];
+    $donHang['tinhTrang'] = $row['tinhTrang'];
+    $donHang['ngayDatHang'] = $row['ngayDatHang'];
+    $donHang['ghiChu'] = $row['ghiChu'];
+    $donHang['dsChiTiet'] = $this->getOrderDetails($row['id']);
+    return $donHang;
+  }
+
   public function getOrdersByUser($userId)
   {
     $dsDonHang = array();

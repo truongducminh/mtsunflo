@@ -1,7 +1,7 @@
 
 
 function addToCart(id) {
-	$.get(window.location.origin + "/mt_sunflo/function.php", {fmod:"add-to-cart", id:id}, function(data){
+	$.get(window.location.origin + "/mtsunflo/function.php", {fmod:"add-to-cart", id:id}, function(data){
 		$(".btn-cart." + id).html("<span><span>" + data + "</span></span>");
 	});
 }

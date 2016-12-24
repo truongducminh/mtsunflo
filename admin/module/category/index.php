@@ -45,7 +45,6 @@
                 </div>
             </div>
         </div>
-        <a class="btn btn-primary" href="#">Next 100</a>
         <!--End Advanced Tables -->
     </div>
 </div>

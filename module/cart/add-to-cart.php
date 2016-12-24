@@ -14,7 +14,7 @@ else {
 	if (count($arrayKeys) > 0) {
 		unset($arrayCart[$arrayKeys[0]]);
 		$_SESSION['cart'] = $arrayCart;
-		echo "Add to cart";
+		echo "Thêm vào giỏ hàng";
 	}
 	else {
 		$arrayCart[] = $id;

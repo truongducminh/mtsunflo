@@ -36,8 +36,8 @@
                             foreach ($orders as $o) {
                               //Order id and action
                               echo '<tr><td>'.$o['id'];
-                              echo '<div><span class="label label-success">Sửa</span></div>';
-                              echo '<div><span class="label label-danger">Xóa</span></div></td>';
+                              echo '<br><br><a class="btn btn-warning" href='.SERVER_NAME.'/admin/editOrder/'.$o['id'].'><i class="fa fa-edit "></i> Sửa</a>';
+                              echo '<br><br><a class="btn btn-danger" href='.SERVER_NAME.'/admin/removeOrder/'.$o['id'].'><i class="fa fa-pencil"></i> Xóa</a></td>';
                               //Order status
                               echo '<td>'.$o['status'].'</td>';
                               //Order date

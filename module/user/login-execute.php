@@ -1,7 +1,8 @@
 <?php
 $username = postValue('username');
 $password = postValue('password');
-$rows = $dbUser->verifyAccount($username, md5($password));
+$userDB = new User();
+$rows = $userDB->verifyAccount($username, md5($password));
 ?>
 
 <form class="log-form" action=<?php echo SERVER_NAME ?> method="post" >

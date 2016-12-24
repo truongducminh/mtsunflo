@@ -5,7 +5,6 @@ if (!isset($db)) {
   include ROOT."/include/function.php";
   include ROOT."/class/database.class.php";
   include ROOT."/class/product.class.php";
-  $db = new product();
 }
 
 

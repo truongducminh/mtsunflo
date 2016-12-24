@@ -9,7 +9,6 @@
     $desc = postValue('desc');
     $image = postValue('image');
     $newImage = $_FILES['newImage'];
-    $msgSubject = 'Thông tin sản phẩm';
     $msg = '';
     if ($newImage['type'] && $newImage['type'] != 'image/jpeg' && $newImage['type'] != 'image/png') $msg .= 'Hình ảnh không hợp lệ<br>';
     if (!$name) $msg .= 'Tên sản phẩm trống<br>';
@@ -39,7 +38,6 @@
     }
     include ROOT.'/admin/module/product/message.php';
 
-    $msgSubject = 'Hình ảnh';
     if ($newImage['name']){
       $imageDB = new Image();
       $result = $imageDB->updateImage($id,$image,$newImage);

@@ -16,10 +16,11 @@ if ($dateOfBirth != ''){
   if ($arr[1] < 10) $arr[1] = '0'.$arr[1];
   $dateOfBirth = $arr[2].'-'.$arr[1].'-'.$arr[0];
 }
-$result = $dbUser->insertUser($name, strtolower($username), md5($password), $dateOfBirth, $address, $phone, $email);
+$userDB = new User();
+$result = $userDB->insertUser($name, strtolower($username), md5($password), $dateOfBirth, $address, $phone, $email);
 if ($result < 0) {
-  echo '<h2 style="text-align:center">Tạo tài khoản thất bại!';
-  echo '<br><a href="<?php echo SERVER_NAME ?>/register"><button type="button">Thử lại</button></a></h2>';
+  echo '<h2 style="text-align:center">Tạo tài khoản thất bại!</h2>';
+  echo '<br><a href="'.SERVER_NAME.'/register"><button type="button">Thử lại</button></a>';
 } else {
 	$_SESSION['userId'] = $result;
 	echo '<h2 style="text-align:center">Tạo tài khoản thành công!</h2>';
